@@ -2,7 +2,7 @@
 #define __NODE
 
 #include <memory>
-class HuffmanNode;
+// class HuffmanNode;
 
 class HuffmanNode {
     private:
