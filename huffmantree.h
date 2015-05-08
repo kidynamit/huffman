@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <iostream>
 #include <fstream>
+#include <string>
 
 class HuffmanTree{
     private:
@@ -20,7 +21,7 @@ class HuffmanTree{
         ~HuffmanTree ();
 
         // constructs a frequency table from file
-        void load_file (const std::string filename, std::unordered_map<char, unsigned int> & frequency_table);
+        void load_file (const std::string filename, std::unordered_map<unsigned char, unsigned int> & frequency_table);
 };
 
 #endif
