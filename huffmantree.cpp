@@ -2,7 +2,7 @@
 
 HuffmanTree::~HuffmanTree ()
 {
-    root.reset ();
+    root.release ();
 }
 
 HuffmanTree & HuffmanTree::operator=(const HuffmanTree & other)
@@ -17,7 +17,7 @@ HuffmanTree & HuffmanTree::operator=(HuffmanTree && other)
 {
     if (this != &other) {
         this->root.reset(other.root.get());
-        other.root.reset ();
+        other.root.release ();
     } 
     return *this;
 }

@@ -38,7 +38,9 @@ HuffmanNode & HuffmanNode::operator=(HuffmanNode && other)
 {
     if (this != &other) {
         this->left.reset (other.left.get());
+        other.left.release();
         this->right.reset (other.right.get());
+        other.right.release();
         this->letter = other.letter;
         this->frequency = other.frequency;
         this->bit_code = other.bit_code;
@@ -51,6 +53,6 @@ HuffmanNode & HuffmanNode::operator=(HuffmanNode && other)
 
 HuffmanNode::~HuffmanNode()
 {
-    left.reset();
-    right.reset();
+    left.release();
+    right.release();
 }
